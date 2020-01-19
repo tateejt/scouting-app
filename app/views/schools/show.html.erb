@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="center">
+  <div class="pic">
+    <img src="http://<%= @school.name.gsub(" ", "") %>.jpg.to/" height="250">
+  </div>
+
+  <div class="info">
+    <p><strong>Name:</strong> <%= @school.name %></p>
+    <p><strong>Total Number of Users:</strong> <%= @school.users.count %></p>
+    <p><strong>GPA Requirement:</strong> <%= @school.min_gpa %></p>
+    <p><strong>Speed Requirement:</strong> <%= @school.min_sprint %> inches</p>
+    <p><strong>Footwork Rating:</strong> <%= @school.footwork_rating %></p>
+    <p><strong>Athletism Rating:</strong> <%= @school.athletism_rating %></p>
+    <% if current_user.admin %>
+      <%= link_to 'Edit School', [:edit, @school] %></p>
+    <% else %>
+      <form action="/scholarships/new" method="post">
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+        <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+        <%= tag(:input, :type => "hidden", :name => :attraction_id, :value => @school.id) %>
+        <input type="submit" value="Go on this ride">
+      </form>
+    <% end %>
+    <%= link_to 'Back', schools_path %></p>
+  </div>
+</div>

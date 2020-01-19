@@ -1,0 +1,21 @@
+<%= form_for(@school) do |f| %>
+
+  <div class="field"> <%= f.label :name %><br>
+  <%= f.text_field :name %></div>
+
+  <div class="field"><%= f.label :min_height, "Height Requirement (in inches)" %><br>
+  <%= f.number_field :min_height %></div>
+
+  <div class="field"><%= f.label :athletism_rating, "How athletic are is your school? (1-5 scale)" %><br>
+  <%= f.number_field :athletism_rating %></div>
+
+  <div class="field"><%= f.label :footwork_rating, "How quick is your schools footwork? (1-5 scale)" %><br>
+  <%= f.number_field :footwork_rating %></div>
+
+  <div class="field"><%= f.label :min_gpa, "What is your minimum gpa to get into your school?" %><br>
+  <%= f.number_field :min_gpa %></div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

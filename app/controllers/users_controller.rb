@@ -48,7 +48,7 @@ class UsersController < ApplicationController
         :height,
         :weight,
         :athletism,
-        :footwork
+        :footwork,
         :gpa,
         :admin
       )

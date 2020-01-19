@@ -52,7 +52,7 @@ class SchoolsController < ApplicationController
       params.require(:school).permit(
         :name,
         :min_sprint,
-        :gpa,
+        :min_gpa,
         :athletism_rating,
         :footwork_rating
       )

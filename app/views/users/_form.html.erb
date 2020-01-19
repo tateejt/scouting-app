@@ -1,0 +1,42 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field"> <%= f.label :name %><br>
+  <%= f.text_field :name %></div>
+
+  <div class="field"><%= f.label :height, "Height (in inches)" %><br>
+  <%= f.number_field :height %></div>
+
+  <div class="field"><%= f.label :weight, "Weight" %><br>
+  <%= f.number_field :weight %></div>
+
+  <div class="field"><%= f.label :athletism, "How athletic are you? (1-5 scale)" %><br>
+  <%= f.number_field :athletism %></div>
+
+  <div class="field"><%= f.label :footwork, "How good is your footwork? (1-5 scale)" %><br>
+  <%= f.number_field :footwork %></div>
+
+  <div class="field"><%= f.label :gpa, "What is your current GPA?" %><br>
+  <%= f.number_field :gpa %></div>
+
+
+
+  <div class="field">
+    <%= f.label :admin, "Check box if you are the head scout?" %>
+    <%= f.check_box :admin%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
