@@ -58,3 +58,4 @@ class SchoolsController < ApplicationController
       )
     end
 end
+end

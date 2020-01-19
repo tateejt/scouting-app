@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_031931) do
 
   create_table "schools", force: :cascade do |t|
     t.string "name"
-    t.integer "gpa"
+    t.integer "min_gpa"
     t.integer "athletism_rating"
     t.integer "footwork_rating"
     t.integer "min_sprint"

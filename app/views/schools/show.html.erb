@@ -19,7 +19,7 @@
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
         <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
         <%= tag(:input, :type => "hidden", :name => :attraction_id, :value => @school.id) %>
-        <input type="submit" value="Go on this ride">
+        <input type="submit" value="Go to this school">
       </form>
     <% end %>
     <%= link_to 'Back', schools_path %></p>
