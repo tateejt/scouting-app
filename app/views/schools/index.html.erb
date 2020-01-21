@@ -15,7 +15,6 @@
     </tr>
     <% @schools.each do |school| %>
       <tr>
-        <td><img src="http://<%= school.name.gsub(" ", "") %>.jpg.to/" width="100"></td>
         <td><%= school.name %></td>
         <td><%= school.min_gpa %></td>
         <% if current_user.admin %>

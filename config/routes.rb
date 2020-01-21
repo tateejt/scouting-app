@@ -7,8 +7,7 @@ get "/signin", to: "sessions#new"
 post "/sessions/create", to: "sessions#create"
 delete "/signout", to: "sessions#destroy"
 
-# rides
-post "/scholarships/new", to: "scholarships#new"
+get "/scholarships/new", to: "scholarships#new"
 
 resources :schools
 

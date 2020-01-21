@@ -17,14 +17,15 @@ class Scholarship < ActiveRecord::Base
 
   def meet_requirements
     gpa_score, fast_enough = false
-    if self.user.gpa >= self.school.gpa
+    if self.user.gpa >= self.school.min_gpa
       gpa_score = true
     end
-    if self.user.sprint >= self.school.sprint
+    if self.user.sprint >= self.school.min_sprint
       fast_enough = true
     end
     return [gpa_score, fast_enough]
   end
+
 
   def offer_scholarship
     new_athletism = self.user.athletism + self.attraction.athletism_rating

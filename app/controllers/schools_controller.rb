@@ -23,6 +23,7 @@ class SchoolsController < ApplicationController
         format.html { redirect_to @school, notice: 'School was successfully created.'}
       else
       format.html { render :new }
+      end
     end
   end
 
@@ -57,5 +58,4 @@ class SchoolsController < ApplicationController
         :footwork_rating
       )
     end
-end
 end
