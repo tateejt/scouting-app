@@ -11,14 +11,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        session[:user_id] = @user.id
-        format.html { redirect_to user_path(@user), notice: "Welcome to the scout app!" }
-      else
-        format.html { render :new }
-       end
+    @user = User.new
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_path
+    else
+      render 'users/new'
     end
   end
 
@@ -45,6 +45,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(
         :name,
+        :email,
+        :password,
         :height,
         :weight,
         :athletism,

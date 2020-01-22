@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
+  has_secure_password
   has_many :scholarships
   has_many :schools, :through => :scholarships
-  has_secure_password
+  validates :email, :presence => true
+  validates :email, :uniqueness => true
 
   def athletic
     if self.athletism && self.footwork

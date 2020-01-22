@@ -1,8 +1,13 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
+  before_action :authentication_required
 
   def index
-    @schools = School.all
+    if session[:user_id].present?
+      @schools = School.all
+    else
+      redirect_to root_path
+    end
   end
 
   def show

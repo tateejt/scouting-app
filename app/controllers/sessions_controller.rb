@@ -11,10 +11,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user][:id])
+    @user = User.find_by(:email => params[:email])
     if @user
       session[:user_id] = @user.id
-      redirect_to user_path(@user), notice: "Welcome back to the scout app!"
+      redirect_to schools_url
     else
       redirect_to signin_path
     end
