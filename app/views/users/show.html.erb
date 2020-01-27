@@ -2,14 +2,9 @@
 
 <% if @message %>
   <div class="center alert">
-    <p><%= @message %></p>
+    <p><%= @message  %></p>
   </div>
 <% end %>
-
-<div class="center">
-  <div class="pic">
-    <img src="http://<%= @user.name.gsub(" ", "") %>.jpg.to/" height="250">
-  </div>
 
   <div class="info">
     <% if @user.admin %>
@@ -18,7 +13,7 @@
     <p><strong>Name:</strong> <%= @user.name %></p>
     <p><strong>GPA:</strong> <%= @user.gpa %></p>
     <p><strong>Athletism:</strong>  <%= @user.athletism %></p>
-    <p><strong>Footwork:</strong> <%= @user.footwork %> inches</p>
+    <p><strong>Footwork:</strong> <%= @user.footwork %> </p>
     <p><%= link_to 'Edit', edit_user_path(@user) %></p>
     <p><%= link_to 'See schools', schools_path %></p>
   </div>

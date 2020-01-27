@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-
-
   <div class="info">
     <p><strong>Name:</strong> <%= @school.name %></p>
     <p><strong>Total Number of Users:</strong> <%= @school.users.count %></p>
@@ -10,7 +7,7 @@
     <p><strong>Footwork Rating:</strong> <%= @school.footwork_rating %></p>
     <p><strong>Athletism Rating:</strong> <%= @school.athletism_rating %></p>
     <% if current_user.admin %>
-      <%= link_to 'Edit School', [:edit, @school] %></p>
+      <%= link_to 'Edit School', [:edit, @school] %>
     <% else %>
       <form action="/scholarships/new" method="post">
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
@@ -19,6 +16,6 @@
         <input type="submit" value="Go to this school">
       </form>
     <% end %>
-    <%= link_to 'Back', schools_path %></p>
+    <%= link_to 'Back', schools_path %>
   </div>
 </div>

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user.password = params[:user][:password]
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to schools_path
     else
       render 'users/new'
     end
